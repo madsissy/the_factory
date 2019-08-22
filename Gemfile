@@ -21,8 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Users
 gem 'devise'
+gem 'simple_form'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

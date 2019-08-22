@@ -2,3 +2,9 @@
   .row
     .col-md-8
       %h2.title-h2 New game
+      = simple_form_for @player do |f|
+        = f.input :firstname
+        = f.input :lastname
+        = f.input :title,  collection: Player::TITLES
+        = f.input :gender, collection: Player.genders
+        = f.button :submit, 'Start', class: 'button-primary-outline button-sm'

@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 2019_08_22_084315) do
     t.datetime "current_date"
     t.integer "wallet_amount"
     t.integer "energy"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "title"
+    t.integer "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_players_on_user_id"
