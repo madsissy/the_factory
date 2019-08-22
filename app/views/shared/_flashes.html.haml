@@ -1,7 +1,7 @@
 - %i(notice error alert).each do |value|
   - if flash[value]
     .container
-      #flash.alert.in{ class: bootstrap_alert_class(value) + ' custom-notif'}
+      #flash.alert.in{ class: value }
         .row
           .col.text-center
             %button.close{type: "button", data: {dismiss: "alert"}} &times;

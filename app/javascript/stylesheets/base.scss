@@ -1,6 +1,6 @@
 body, html{overflow-x:hidden;}
 body{
-  font-family: 'Roboto'; line-height:1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding-top:70px; background-color: $lighter-grey3 !important;
+  font-family: 'Roboto'; line-height:1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding-top:100px; background-color: $lighter-grey3 !important;
   &.nav-hidden{padding-top:0;}
 }
 [class*=col]{position:unset;}
