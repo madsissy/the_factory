@@ -1,4 +1,11 @@
 #main-nav
   .row
     .col-auto
-      %h2 The Factory
+      .logo
+        = link_to root_path do
+          %h2 The Factory
+    .col
+      .nav-links
+        - unless current_user
+          = link_to 'Sign in', new_user_session_path, class: 'button-primary button-sm'
+          = link_to 'Sign up', new_user_registration_path, class: 'button-primary button-sm'

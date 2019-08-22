@@ -1,1 +1,6 @@
-@import './bootstrap_custom.scss'
+@import './variables.scss';
+@import './base.scss';
+@import './components/buttons.scss';
+@import './components/main_nav.scss';
+
+@import "~bootstrap/scss/bootstrap";
