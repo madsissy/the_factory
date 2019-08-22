@@ -1,3 +1,10 @@
+body, html{overflow-x:hidden;}
+body{
+  font-family: 'Roboto'; line-height:1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; padding-top:70px;
+  &.nav-hidden{padding-top:0;}
+}
+[class*=col]{position:unset;}
+
 article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
 mark, rp, rt, ruby, summary, time {display:inline;}
 h1,h2,h3,h4,h6,.h1,.h2,.h3,.h4,.h5,.h6{margin:0; font-weight:normal; line-height:1.1;}
