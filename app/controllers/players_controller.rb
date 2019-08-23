@@ -35,7 +35,7 @@ class PlayersController < ApplicationController
 
     def set_start_values
       @player.wallet_amount = 5000
-      @player.current_date  = Date.new(21, 06, 2031)
+      @player.current_date  = Date.new(2031, 6, 21)
       @player.energy        = 10
     end
 end

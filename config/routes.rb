@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :players, only: [:index, :new, :create, :destroy] do
-    resource :intro, only: [:show]
+    resource :intro, only: [:show], to: 'players/intros#show'
   end
 
 end
