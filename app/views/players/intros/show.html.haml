@@ -3,3 +3,4 @@
     .col-md-8
       %h2.title-h2 A new start
       %p= "Welcome #{@player.full_name} !"
+      = link_to "Enter the factory", player_factory_path(@player)
