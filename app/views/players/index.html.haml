@@ -1,6 +1,6 @@
 .container.mt30
   .row
-    .col-md-8
+    .col-lg-8
       %h2.title-h2 Current games
       %ul.players-list
         - @players.each do |player|
@@ -12,5 +12,5 @@
               .col-lg-8
                 = player.wallet_amount
                 = player.current_date.strftime('%d/%m/%Y')
-    .col-md-2
+    .col-lg-2
       = link_to 'New game', new_player_path, class: 'button-primary-outline button-md'

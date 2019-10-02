@@ -1,5 +1,11 @@
 .container.mt30
   .row
-    .col-md-8
+    .col-lg-8
       %h2.title-h2 Your house
       %p Here you can chill
+
+  .row
+    .col-lg-2
+      %p Go to
+    .col-lg-6
+      = link_to 'Your factory', player_factories_path(@player)
