@@ -6,6 +6,7 @@ class Player < ApplicationRecord
   belongs_to :user
   has_one    :factory
   has_one    :house
+  has_many   :sissies
 
   # === Enum ===
   enum gender: [:male, :female, :shemale]

@@ -9,5 +9,8 @@ class Sissy < ApplicationRecord
   # === Validations ===
 
   #  === Methods ===
+  def full_name
+    "#{firstname} #{lastname}"
+  end
 
 end

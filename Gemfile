@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'simple_form'
+gem 'faker'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
