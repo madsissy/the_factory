@@ -1,16 +1,26 @@
 .container.mt30
   .row
-    .col-lg-8
-      %h2.title-h2 Current games
-      %ul.players-list
-        - @players.each do |player|
-          %li.player-item
-            .row
-              .col-lg-4
-                =link_to player_houses_path(player) do
-                  = player.full_name
-              .col-lg-8
-                = player.wallet_amount
-                = player.current_date.strftime('%d/%m/%Y')
-    .col-lg-2
-      = link_to 'New game', new_player_path, class: 'button-primary-outline button-md'
+    .col-lg-6
+      = image_tag 'factory.jpg', class: 'places-pics'
+    .col-lg-6
+
+      .row
+        .col-lg-12
+          %h2.title-h2 Current games
+          %ul.players-list.custom-list.custom-list-bold
+            - @players.each do |player|
+              %li.player-item
+                .row
+                  .col-lg-4
+                    =link_to player_houses_path(player) do
+                      = player.full_name
+                  .col-lg-8
+                    %span
+                      %i.lni-wallet
+                      = player.wallet_amount
+                    %span
+                      %i.lni-alarm-clock
+                      = player.current_date.strftime('%d/%m/%Y')
+      .row
+        .col-lg-6
+          = link_to 'New game', new_player_path, class: 'button-primary-outline button-md'

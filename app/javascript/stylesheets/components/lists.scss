@@ -1,0 +1,19 @@
+.custom-list{
+  list-style:none; margin-bottom:25px;
+  li{
+    margin-bottom:10px; font-size:16px; line-height:20px;
+    &:before{content:''; height:6px; width:6px; border-radius:100%; background:$lighter-grey3; display:inline-block; margin-bottom:3px; margin-right:10px; color:$dark-grey; font-size:12px;}
+  }
+  &-semibold{
+    li{font-weight:600;}
+  }
+  &-bold{
+    li{font-weight:bold;}
+  }
+  &-secondary{
+    li:before{background:$secondary; color:$secondary;}
+  }
+  &-checks{
+    li:before{content:'\f00c'; font-family:'Font Awesome 5 Pro'; font-weight:400; height:auto; width:auto; border-radius:0; background:none;}
+  }
+}
