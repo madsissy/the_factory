@@ -7,5 +7,6 @@
   .row
     .col-lg-2
       %p Go to
-    .col-lg-6
-      = link_to 'Your factory', player_factories_path(@player)
+    .col-lg-6.align-items-center
+      %p= link_to 'Your factory', player_factories_path(@player)
+      %p= link_to 'The streets',  player_streets_path(@player)

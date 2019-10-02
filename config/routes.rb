@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :players,    only: [:index, :new, :create, :destroy] do
     resource :intro,     only: [:show], to: 'players/intros#show'
     resource :houses,    only: [:show], to: 'players/houses#show'
+    resource :streets,   only: [:show], to: 'players/streets#show'
     resource :factories, only: [:show], to: 'players/factories#show'
     resources :sissies,  controller: 'players/sissies'
   end
