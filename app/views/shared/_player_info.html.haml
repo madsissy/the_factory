@@ -1,0 +1,11 @@
+#main-nav__player-info
+  .d-flex.justify-content-center
+    %p
+      %i.lni-alarm-clock
+      = player.current_date.strftime('%d/%m/%Y')
+    %p
+      %i.lni-wallet
+      = "#{player.wallet_amount} ¥"
+    %p
+      %i.lni-heart
+      = player.energy

@@ -4,6 +4,9 @@
       .logo
         = link_to root_path do
           = image_tag 'logo_factory.png'
+    - if @player
+      .col-auto
+        = render 'shared/player_info', player: @player
     .col
       .nav-links
         - unless current_user
