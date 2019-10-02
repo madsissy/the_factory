@@ -1,18 +1,22 @@
 .container.mt30
   .row
-    .col-lg-8
-      %h2.title-h2 The streets
-      %p Crowdy and dark city
-
-  .row
-    .col-lg-2
-      %p Actions
     .col-lg-6
-      = link_to 'Pick a victim', player_sissies_path(@player), method: :create
-
-
-  .row
-    .col-lg-2
-      %p Go to
+      = image_tag 'dark-streets.jpg', class: 'places-pics'
     .col-lg-6
-      = link_to 'Your house', player_houses_path(@player)
+      .row
+        .col-lg-8
+          %h2.title-h2 The streets
+          %p Crowdy and dark city
+
+      .row
+        .col-lg-2
+          %p Actions
+        .col-lg-6
+          = link_to 'Pick a victim', player_sissies_path(@player), method: :create
+
+
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6
+          = link_to 'Your house', player_houses_path(@player)

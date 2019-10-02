@@ -1,12 +1,16 @@
 .container.mt30
   .row
-    .col-lg-8
-      %h2.title-h2 Your house
-      %p Here you can chill
+    .col-lg-6
+      = image_tag 'penthouse.jpg', class: 'places-pics'
+    .col-lg-6
+      .row
+        .col-lg-8
+          %h2.title-h2 Your house
+          %p Here you can chill
 
-  .row
-    .col-lg-2
-      %p Go to
-    .col-lg-6.align-items-center
-      %p= link_to 'Your factory', player_factories_path(@player)
-      %p= link_to 'The streets',  player_streets_path(@player)
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6.align-items-center
+          %p= link_to 'Your factory', player_factories_path(@player)
+          %p= link_to 'The streets',  player_streets_path(@player)
