@@ -5,6 +5,13 @@ class Sissy < ApplicationRecord
   belongs_to :player
 
   # === Enum ===
+  enum hair_color:      [:blond, :platinum_blond, :brown, :dark_brown, :jet_black, :ginger, :red, :pink, :green, :blue]
+  enum eyes_color:      [:brown, :black, :green, :blue, :grey]
+  enum skin_color:      [:pale, :olive, :tanned, :black]
+  enum testicles_size:  [:micro, :small, :big, :huge]
+  enum breasts_size:    [:no_breasts, :a_cup, :b_cup, :c_cup, :d_cup, :e_cup, :g_cup]
+  enum ass_size:        [:flat, :rounded, :bubble_butt, :huge]
+  enum lips_size:       [:thin, :plump, :huge]
 
   # === Validations ===
   validates_presence_of :firstname
