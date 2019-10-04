@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_054953) do
     t.integer "testicles_size"
     t.integer "breasts_size"
     t.integer "ass_size"
+    t.integer "lips_size"
     t.integer "feminity"
     t.integer "will"
     t.integer "oral_skill"

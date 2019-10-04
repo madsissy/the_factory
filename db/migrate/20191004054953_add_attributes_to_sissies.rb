@@ -11,6 +11,7 @@ class AddAttributesToSissies < ActiveRecord::Migration[6.0]
     add_column :sissies, :testicles_size, :integer
     add_column :sissies, :breasts_size, :integer
     add_column :sissies, :ass_size, :integer
+    add_column :sissies, :lips_size, :integer
     add_column :sissies, :feminity, :integer
     add_column :sissies, :will, :integer
     add_column :sissies, :oral_skill, :integer
