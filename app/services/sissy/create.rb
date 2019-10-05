@@ -6,7 +6,5 @@ module Sissy::Create
       lastname: Faker::Name.last_name,
       birthdate: Faker::Date.birthday(min_age: 18, max_age: 35)
     )
-
-    sissy
   end
 end

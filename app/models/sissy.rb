@@ -5,13 +5,13 @@ class Sissy < ApplicationRecord
   belongs_to :player
 
   # === Enum ===
-  enum hair_color:      [:blond, :platinum_blond, :brown, :dark_brown, :jet_black, :ginger, :red, :pink, :green, :blue]
-  enum eyes_color:      [:brown, :black, :green, :blue, :grey]
-  enum skin_color:      [:pale, :olive, :tanned, :black]
-  enum testicles_size:  [:micro, :small, :big, :huge]
+  enum hair_color:      [:blond_hair, :platinum_blond_hair, :brown_hair, :dark_brown_hair, :jet_black_hair, :ginger_hair, :red_hair, :pink_hair, :green_hair, :blue_hair]
+  enum eyes_color:      [:brown_eyes, :black_eyes, :green_eyes, :blue_eyes, :grey_eyes]
+  enum skin_color:      [:pale_skin, :olive_skin, :tanned_skin, :black_skin]
+  enum testicles_size:  [:micro_testicles, :small_testicles, :big_testicles, :huge_testicles]
   enum breasts_size:    [:no_breasts, :a_cup, :b_cup, :c_cup, :d_cup, :e_cup, :g_cup]
-  enum ass_size:        [:flat, :rounded, :bubble_butt, :huge]
-  enum lips_size:       [:thin, :plump, :huge]
+  enum ass_size:        [:flat_ass, :rounded_ass, :bubble_butt_ass, :huge_ass]
+  enum lips_size:       [:thin_lips, :plump_lips, :huge_lips]
 
   # === Validations ===
   validates_presence_of :firstname
@@ -34,15 +34,15 @@ class Sissy < ApplicationRecord
   validates_presence_of :anal_skill
   validates_presence_of :sub_skill
 
-  validates_numericality_of :height,      in: 150..190
-  validates_numericality_of :weight,      in: 50..120
-  validates_numericality_of :hair_length, in: 0..120
-  validates_numericality_of :penis_size,  in: 1..30
-  validates_numericality_of :feminity,    in: 0..100
-  validates_numericality_of :will,        in: 0..100
-  validates_numericality_of :oral_skill,  in: 0..100
-  validates_numericality_of :anal_skill,  in: 0..100
-  validates_numericality_of :sub_skill,   in: 0..100
+  validates_numericality_of :height,      greater_than: 149,            less_than: 191
+  validates_numericality_of :weight,      greater_than: 49,             less_than: 121
+  validates_numericality_of :penis_size,  greater_than: 0,              less_than: 31
+  validates_numericality_of :hair_length, greater_than_or_equal_to: 0,  less_than: 121
+  validates_numericality_of :feminity,    greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :will,        greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :oral_skill,  greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :anal_skill,  greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :sub_skill,   greater_than_or_equal_to: 0,  less_than: 101
 
   #  === Methods ===
   def full_name
