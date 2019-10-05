@@ -1,6 +1,6 @@
 class Players::SissiesController < Players::BaseController
   def new
-    @sissy = create_new_sissy
+    @sissy = create_new_sissy params[:location]
   end
 
   def create
@@ -17,7 +17,7 @@ class Players::SissiesController < Players::BaseController
 
   private
 
-    def create_new_sissy
-      SissyService.new(nil, player: @player).create
+    def create_new_sissy location
+      SissyService.new(nil, player: @player).create(location)
     end
 end
