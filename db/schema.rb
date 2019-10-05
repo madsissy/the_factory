@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_054953) do
+ActiveRecord::Schema.define(version: 2019_10_05_111015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_054953) do
     t.integer "oral_skill"
     t.integer "anal_skill"
     t.integer "sub_skill"
+    t.integer "attractiveness"
     t.index ["player_id"], name: "index_sissies_on_player_id"
   end
 

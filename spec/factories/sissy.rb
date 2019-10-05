@@ -14,6 +14,7 @@ FactoryBot.define do
     breasts_size    { Sissy.breasts_sizes[:no_breasts] }
     ass_size        { Sissy.ass_sizes[:huge_ass] }
     lips_size       { Sissy.lips_sizes[:plump_lips] }
+    attractiveness  { rand(0..100) }
     feminity        { rand(0..100) }
     will            { rand(0..100) }
     oral_skill      { rand(0..100) }

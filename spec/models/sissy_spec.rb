@@ -67,21 +67,23 @@ RSpec.describe Sissy, type: :model do
     it { is_expected.to validate_presence_of(:breasts_size    ) }
     it { is_expected.to validate_presence_of(:ass_size        ) }
     it { is_expected.to validate_presence_of(:lips_size       ) }
+    it { is_expected.to validate_presence_of(:attractiveness  ) }
     it { is_expected.to validate_presence_of(:feminity        ) }
     it { is_expected.to validate_presence_of(:will            ) }
     it { is_expected.to validate_presence_of(:oral_skill      ) }
     it { is_expected.to validate_presence_of(:anal_skill      ) }
     it { is_expected.to validate_presence_of(:sub_skill       ) }
 
-    it { is_expected.to validate_numericality_of(:height      ).is_greater_than(149            ).is_less_than(191) }
-    it { is_expected.to validate_numericality_of(:weight      ).is_greater_than(49             ).is_less_than(121) }
-    it { is_expected.to validate_numericality_of(:penis_size  ).is_greater_than(0              ).is_less_than(31)  }
-    it { is_expected.to validate_numericality_of(:hair_length ).is_greater_than_or_equal_to(0  ).is_less_than(121) }
-    it { is_expected.to validate_numericality_of(:feminity    ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
-    it { is_expected.to validate_numericality_of(:will        ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
-    it { is_expected.to validate_numericality_of(:oral_skill  ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
-    it { is_expected.to validate_numericality_of(:anal_skill  ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
-    it { is_expected.to validate_numericality_of(:sub_skill   ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:height        ).is_greater_than(149            ).is_less_than(191) }
+    it { is_expected.to validate_numericality_of(:weight        ).is_greater_than(49             ).is_less_than(121) }
+    it { is_expected.to validate_numericality_of(:penis_size    ).is_greater_than(0              ).is_less_than(31)  }
+    it { is_expected.to validate_numericality_of(:hair_length   ).is_greater_than_or_equal_to(0  ).is_less_than(121) }
+    it { is_expected.to validate_numericality_of(:attractiveness).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:feminity      ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:will          ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:oral_skill    ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:anal_skill    ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
+    it { is_expected.to validate_numericality_of(:sub_skill     ).is_greater_than_or_equal_to(0  ).is_less_than(101) }
   end
 
   describe 'methods' do

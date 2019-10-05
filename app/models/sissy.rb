@@ -28,21 +28,23 @@ class Sissy < ApplicationRecord
   validates_presence_of :breasts_size
   validates_presence_of :ass_size
   validates_presence_of :lips_size
+  validates_presence_of :attractiveness
   validates_presence_of :feminity
   validates_presence_of :will
   validates_presence_of :oral_skill
   validates_presence_of :anal_skill
   validates_presence_of :sub_skill
 
-  validates_numericality_of :height,      greater_than: 149,            less_than: 191
-  validates_numericality_of :weight,      greater_than: 49,             less_than: 121
-  validates_numericality_of :penis_size,  greater_than: 0,              less_than: 31
-  validates_numericality_of :hair_length, greater_than_or_equal_to: 0,  less_than: 121
-  validates_numericality_of :feminity,    greater_than_or_equal_to: 0,  less_than: 101
-  validates_numericality_of :will,        greater_than_or_equal_to: 0,  less_than: 101
-  validates_numericality_of :oral_skill,  greater_than_or_equal_to: 0,  less_than: 101
-  validates_numericality_of :anal_skill,  greater_than_or_equal_to: 0,  less_than: 101
-  validates_numericality_of :sub_skill,   greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :height,          greater_than: 149,            less_than: 191
+  validates_numericality_of :weight,          greater_than: 49,             less_than: 121
+  validates_numericality_of :penis_size,      greater_than: 0,              less_than: 31
+  validates_numericality_of :hair_length,     greater_than_or_equal_to: 0,  less_than: 121
+  validates_numericality_of :attractiveness,  greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :feminity,        greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :will,            greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :oral_skill,      greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :anal_skill,      greater_than_or_equal_to: 0,  less_than: 101
+  validates_numericality_of :sub_skill,       greater_than_or_equal_to: 0,  less_than: 101
 
   #  === Methods ===
   def full_name

@@ -9,6 +9,7 @@ module Sissy::Create
       weight:           rand(50..120),
       hair_length:      rand(0..120),
       penis_size:       rand(1..30),
+      attractiveness:   rand(10..100),
       feminity:         values_from_location(location)[:feminity],
       will:             values_from_location(location)[:will],
       oral_skill:       values_from_location(location)[:oral_skill],
