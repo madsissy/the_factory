@@ -49,4 +49,10 @@ class Sissy < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
+  def age_from_birthdate
+    age = player.current_date.year - birthdate.year
+    age -= 1 if player.current_date < birthdate + age.years
+    age
+  end
+
 end

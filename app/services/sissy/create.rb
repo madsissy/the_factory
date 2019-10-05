@@ -20,7 +20,7 @@ module Sissy::Create
       testicles_size:   Sissy.testicles_sizes.values.sample,
       breasts_size:     Sissy.breasts_sizes.values.sample,
       ass_size:         Sissy.ass_sizes.values.sample,
-      lips_size:        Sissy.ass_sizes.values.sample,
+      lips_size:        Sissy.lips_sizes.values.sample,
     )
   end
 end

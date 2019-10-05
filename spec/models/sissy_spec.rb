@@ -89,6 +89,12 @@ RSpec.describe Sissy, type: :model do
       sissy = build(:sissy, firstname: 'Sissy', lastname: 'Lou')
       expect(sissy.full_name).to eq "Sissy Lou"
     end
+
+    it '#age_from_birthdate' do
+      player = create(:player)
+      sissy = build(:sissy, birthdate: Date.new(2000, 6, 22), player: player)
+      expect(sissy.age_from_birthdate).to eq 30
+    end
   end
 
 end
