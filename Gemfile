@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'simple_form'
-gem 'faker'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -45,6 +44,7 @@ group :test do
   gem 'webdrivers'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

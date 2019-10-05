@@ -1,9 +1,10 @@
 module Sissy::Create
 
   def create
+    puts FIRST_NAMES.sample
     sissy = player.sissies.create(
-      firstname:        Faker::Name.first_name,
-      lastname:         Faker::Name.last_name,
+      firstname:        FIRST_NAMES.sample,
+      lastname:         LAST_NAMES.sample,
       birthdate:        set_birthdate,
       height:           rand(150..190),
       weight:           rand(50..120),
