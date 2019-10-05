@@ -4,7 +4,7 @@ module Sissy::Create
     sissy = player.sissies.create(
       firstname:        Faker::Name.first_name,
       lastname:         Faker::Name.last_name,
-      birthdate:        Faker::Date.birthday(min_age: 18, max_age: 35),
+      birthdate:        set_birthdate,
       height:           rand(150..190),
       weight:           rand(50..120),
       hair_length:      rand(0..120),
@@ -22,5 +22,13 @@ module Sissy::Create
       ass_size:         Sissy.ass_sizes.values.sample,
       lips_size:        Sissy.lips_sizes.values.sample,
     )
+  end
+
+  private
+
+  def set_birthdate
+    end_date  = player.current_date - 18.years
+    init_date = Time.new((player.current_date - 35.years).year, 1, 1)
+    Time.at(init_date + rand * (end_date.to_f - init_date.to_f))
   end
 end

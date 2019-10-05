@@ -10,6 +10,7 @@ RSpec.describe Sissy::Create do
 
       expect(result               ).to be_kind_of Sissy
       expect(result.persisted?    ).to eq true
+      expect(result.birthdate     ).to be_between(player.current_date - 35.year, player.current_date - 18.year)
     end
   end
 
