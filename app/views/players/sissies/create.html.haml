@@ -14,6 +14,6 @@
             %li
               = link_to 'Try to take him', '#'
             %li
-              = link_to 'Look for another victim', new_player_sissy_path(@player, new_search: true, location: params[:location])
+              = link_to 'Look for another victim', player_sissies_path(@player, new_search: true, location: params[:location])
             %li
               = link_to 'Back to the streets', player_streets_path(@player)

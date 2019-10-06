@@ -1,5 +1,6 @@
 class Players::SissiesController < Players::BaseController
-  def new
+
+  def create
     destroy_last_sissy if params[:new_search]
 
     if player_has_no_sissies || player_last_sissy_is_owned?
@@ -7,18 +8,6 @@ class Players::SissiesController < Players::BaseController
     else
       @sissy = @player.sissies.last
     end
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
