@@ -50,6 +50,12 @@ RSpec.describe Sissy, type: :model do
       expect(@sissy.thin_lips?).to eq true
       expect(described_class.lips_sizes).to eq({"huge_lips"=>2, "plump_lips"=>1, "thin_lips"=>0})
     end
+
+    it '#location' do
+      expect(@sissy.in_house!).to eq true
+      expect(@sissy.in_house?).to eq true
+      expect(described_class.locations).to eq({"in_factory"=>1, "in_house"=>0})
+    end
   end
 
   describe 'validations' do

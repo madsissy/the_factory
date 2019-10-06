@@ -12,6 +12,7 @@ class Sissy < ApplicationRecord
   enum breasts_size:    [:no_breasts, :a_cup, :b_cup, :c_cup, :d_cup, :e_cup, :g_cup]
   enum ass_size:        [:flat_ass, :rounded_ass, :bubble_butt_ass, :huge_ass]
   enum lips_size:       [:thin_lips, :plump_lips, :huge_lips]
+  enum location:        [:in_house, :in_factory]
 
   # === Validations ===
   validates_presence_of :firstname

@@ -9,8 +9,9 @@ RSpec.describe Sissy::Recruit do
       before{ sissy.player.update(seduction: 50) }
 
       it 'returns true and sets owned' do
-        expect(subject.recruit).to eq true
-        expect(sissy.owned    ).to eq true
+        expect(subject.recruit   ).to eq true
+        expect(sissy.owned       ).to eq true
+        expect(sissy.in_factory? ).to eq true
       end
     end
 
@@ -18,8 +19,9 @@ RSpec.describe Sissy::Recruit do
       before{ sissy.player.update(seduction: 60) }
 
       it 'returns true and sets owned' do
-        expect(subject.recruit).to eq true
-        expect(sissy.owned    ).to eq true
+        expect(subject.recruit   ).to eq true
+        expect(sissy.owned       ).to eq true
+        expect(sissy.in_factory? ).to eq true
       end
     end
 

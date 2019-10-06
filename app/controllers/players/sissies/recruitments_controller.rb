@@ -2,7 +2,7 @@ class Players::Sissies::RecruitmentsController < Players::BaseController
   before_action :consume_player_energy
 
   def new
-    @sissy = Sissy.find(params[:sissy_id])
+    @sissy = Sissy.find params[:sissy_id]
 
     @result = SissyService.new(@sissy, player: @player).recruit
   end
