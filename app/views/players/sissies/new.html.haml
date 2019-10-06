@@ -12,8 +12,8 @@
         .col-lg-6
           %ul.custom-list
             %li
-              = link_to 'Try to take him', '#'
+              = link_to 'Try to take him', new_player_sissy_recruitment_path(@player, @sissy)
             %li
-              = link_to 'Look for another victim', player_sissies_path(@player, new_search: true, location: params[:location])
+              = link_to 'Look for another victim', new_player_sissy_path(@player, new_search: true, location: params[:location])
             %li
               = link_to 'Back to the streets', player_streets_path(@player)

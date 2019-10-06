@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resource :houses,    only: [:show],     to: 'players/houses#show'
     resource :streets,   only: [:show],     to: 'players/streets#show'
     resource :factories, only: [:show],     to: 'players/factories#show'
-    resources :sissies,  only: [:create],   controller: 'players/sissies'
+    resources :sissies,  only: [:new],   controller: 'players/sissies' do
+      resources :recruitments, only: [:new], controller: 'players/sissies/recruitments'
+    end
   end
 
 end
