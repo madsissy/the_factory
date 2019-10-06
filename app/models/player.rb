@@ -15,6 +15,8 @@ class Player < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname,  presence: true
   validates :gender,    presence: true
+  validates_numericality_of :seduction,    less_than_or_equal_to: 100
+  validates_numericality_of :intimidation, less_than_or_equal_to: 100
 
   #  === Methods ===
   def full_name

@@ -31,6 +31,8 @@ RSpec.describe Player, type: :model do
     it { is_expected.to validate_presence_of(:firstname) }
     it { is_expected.to validate_presence_of(:lastname) }
     it { is_expected.to validate_presence_of(:gender) }
+    it { is_expected.to validate_numericality_of(:seduction   ).is_less_than_or_equal_to(100) }
+    it { is_expected.to validate_numericality_of(:intimidation).is_less_than_or_equal_to(100) }
   end
 
   describe 'methods' do
