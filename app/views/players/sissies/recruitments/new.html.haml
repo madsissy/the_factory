@@ -6,3 +6,16 @@
       .row
         .col-lg-8
           %h2.title-h2 A fair fight ?
+          - if @result
+            %p You did it!
+          - else
+            %p fail !
+      .row
+        .col-lg-6
+          %ul.custom-list
+            - if @result
+              %li
+                = link_to 'Bring him to the factory', player_factories_path(@player)
+            - else
+              %li
+                = link_to 'Back to the streets', player_streets_path(@player)
