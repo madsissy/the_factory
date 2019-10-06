@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Sissy::Create do
+RSpec.describe Sissy::Recruit do
   let(:sissy)  { create(:sissy, will: 50) }
   subject      { SissyService.new(sissy, player: sissy.player) }
 
@@ -13,7 +13,7 @@ RSpec.describe Sissy::Create do
       end
     end
 
-    context 'player initmidation is greater or equal to sissy\'s will' do
+    context 'player intimidation is greater or equal to sissy\'s will' do
       before{ sissy.player.update(seduction: 60) }
 
       it 'returns true' do
@@ -21,7 +21,7 @@ RSpec.describe Sissy::Create do
       end
     end
 
-    context 'player initmidation and seduction are lower than sissy\'s will' do
+    context 'player intimidation and seduction are lower than sissy\'s will' do
       before{ sissy.player.update(seduction: 49, intimidation: 30) }
 
       it 'returns true' do
