@@ -1,7 +1,10 @@
 class Players::SissiesController < Players::BaseController
 
   def new
-    destroy_last_sissy if params[:new_search]
+    if params[:new_search]
+      destroy_last_sissy
+      PlayerService.new(@player).handle_energy(-1)
+    end
 
     if player_has_no_sissies || player_last_sissy_is_owned?
       @sissy = create_new_sissy params[:location]
