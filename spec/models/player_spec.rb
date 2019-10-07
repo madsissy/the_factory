@@ -47,5 +47,11 @@ RSpec.describe Player, type: :model do
       player = build(:player, firstname: 'John', lastname: 'Doe', title: 'Master')
       expect(player.firstname_with_title).to eq "Master John Doe"
     end
+
+    it '#enough_energy?' do
+      player = build(:player, energy: 2)
+      expect(player.enough_energy?(3)).to eq false
+      expect(player.enough_energy?(2)).to eq true
+    end
   end
 end

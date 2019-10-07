@@ -28,4 +28,8 @@ class Player < ApplicationRecord
   def firstname_with_title
     "#{title} #{firstname} #{lastname}"
   end
+
+  def enough_energy? energy_needed
+    energy >= energy_needed
+  end
 end

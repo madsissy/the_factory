@@ -1,0 +1,22 @@
+.custom-notif{
+  padding:25px 30px; border-radius:4px; font-size:18px; margin-bottom:20px;
+  &.success{
+    background:#D9FFC1; color:#5CC332;
+    button{color:#5CC332;}
+  }
+  &.error{
+    background:#FFDDDD; color:#E00000;
+    button{color:#E00000;}
+  }
+  &.alert{
+    background:#FFFCC1; color:#C39C32;
+    button{color:#C39C32;}
+  }
+  &.notice{
+    background:#FFFFFF; color:#3CB591; border: 1px solid #E5E5E5;
+    button{color:#3CB591;}
+  }
+  button{
+    background:none; border:none; padding:0; outline:none; cursor:pointer;
+  }
+}
