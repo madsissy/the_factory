@@ -1,0 +1,15 @@
+.container.mt30
+  .row
+    .col-lg-6
+      = image_tag 'black_market.jpg', class: 'places-pics'
+    .col-lg-6
+      .row
+        .col-lg-8
+          %h2.title-h2 The Black Market
+          %p Here you can find lots of stuff... Legal or not.
+
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6
+          %p= link_to 'The streets', player_streets_path(@player)
