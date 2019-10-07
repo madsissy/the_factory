@@ -13,4 +13,8 @@
           = link_to 'Sign in', new_user_session_path, class: 'button-primary button-sm'
           = link_to 'Sign up', new_user_registration_path, class: 'button-primary button-sm'
         - else
-          = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-primary button-sm'
+          .row
+            .col-auto
+              = link_to 'Inventory', player_items_path(@player), class: 'button-secondary button-sm'
+            .col
+              = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-primary button-sm'

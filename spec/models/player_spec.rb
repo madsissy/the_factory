@@ -10,6 +10,7 @@ RSpec.describe Player, type: :model do
     it { is_expected.to have_one(:house) }
     it { is_expected.to have_one(:factory) }
     it { is_expected.to have_many(:sissies) }
+    it { is_expected.to have_many(:items) }
   end
 
   describe 'enums' do

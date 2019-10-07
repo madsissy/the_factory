@@ -1,0 +1,23 @@
+.container.mt30
+  .row
+    .col-lg-6
+      = image_tag 'factory.jpg', class: 'places-pics'
+    .col-lg-6
+
+      .row
+        .col-lg-12
+          %h2.title-h2 Inventory
+
+          %ul.custom-list.custom-list-bold
+            - @weapons.each do |weapon|
+              %li
+                %p= weapon.name
+
+          %ul.custom-list.custom-list-bold
+            - @drugs.each do |drug|
+              %li
+                %p= drug.name
+
+      .row
+        .col-lg-6
+          = link_to 'Back', :back, class: 'button-primary-outline button-md'
