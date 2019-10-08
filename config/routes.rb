@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       resources :sleeps,      only: [:create],   to: 'players/houses/sleeps#create'
     end
     resource :factories,      only: [:show],     to: 'players/factories#show' do
-      resource :dungeons,      only: [:show],     to: 'players/factories/dungeons#show'
+      resource :dungeons,     only: [:show],     to: 'players/factories/dungeons#show'
+      get :bondage,                              to: 'players/factories/dungeons#bondage'
     end
 
     resources :sissies,  only: [:new],   controller: 'players/sissies' do

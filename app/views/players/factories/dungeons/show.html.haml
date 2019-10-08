@@ -14,6 +14,12 @@
 
       .row
         .col-lg-2
+          %p Actions
+        .col-lg-6
+          = link_to 'Use bondage', bondage_player_factories_path(@player, sissy: @sissy.id)
+
+      .row
+        .col-lg-2
           %p Go to
         .col-lg-6
           = link_to 'Your Factory', player_factories_path(@player)

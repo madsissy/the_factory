@@ -1,6 +1,9 @@
 class Players::Factories::DungeonsController < Players::BaseController
+  include GuardPlayerSissy
 
   def show
-    @sissy = @player.sissies.find params[:sissy]
+  end
+
+  def bondage
   end
 end
