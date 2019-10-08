@@ -1,0 +1,19 @@
+.container.mt30
+  .row
+    .col-lg-6
+      = image_tag 'factory.jpg', class: 'places-pics'
+    .col-lg-6
+      .row
+        .col-lg-8
+          %h2.title-h2 The Dungeon
+          %p Here you can bend the will of sissies
+
+      .row
+        .col-lg-8
+          %h5.title-h5= "#{@sissy.full_name} is waiting nervously"
+
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6
+          = link_to 'Your Factory', player_factories_path(@player)
