@@ -46,4 +46,12 @@ module SissiesHelper
     when sissy.attractiveness.between?(76, 100) then 'attractive'
     end
   end
+
+  def eyes_colors_in_words eyes_color
+    eyes_color.delete_suffix('_eyes')
+  end
+
+  def hair_color_in_words hair_color
+    hair_color.delete_suffix('_hair')
+  end
 end

@@ -71,4 +71,18 @@ RSpec.describe SissiesHelper do
       expect(attractiveness_in_words(sissy)).to eq 'attractive'
     end
   end
+
+  describe '#eyes_colors_in_words' do
+    it 'return the color as a string' do
+      sissy.blue_eyes!
+      expect(eyes_colors_in_words sissy.eyes_color).to eq 'blue'
+    end
+  end
+
+  describe '#hair_color_in_words' do
+    it 'return the color as a string' do
+      sissy.blond_hair!
+      expect(hair_color_in_words sissy.hair_color).to eq 'blond'
+    end
+  end
 end
