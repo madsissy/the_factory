@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-shared_examples_for 'guard_player_sissy' do
-  let(:sissy) { create(:sissy) }
+shared_examples_for 'guard player sissy' do
 
   it 'set sissy if associated to player' do
-    subject
-    expect( @sissy ).to eq sissy
+    expect( controller.instance_variable_get(:@sissy) ).to eq player_sissy
   end
 end
