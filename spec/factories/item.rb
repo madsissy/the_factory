@@ -1,12 +1,14 @@
 FactoryBot.define do
   factory :item do
-    name               { 'Taser' }
-    kind               { 'weapon'}
-    quantity           { 1 }
-    modifier           { 10 }
-    modified_attribute { 'intimidation' }
-    price              { 100 }
+    factory :weapon do      
+      name               { 'Taser' }
+      kind               { 'weapon'}
+      quantity           { 1 }
+      modifier           { 30 }
+      modified_attribute { 'intimidation' }
+      price              { 100 }
 
-    association     :player
+      association     :player
+    end
   end
 end

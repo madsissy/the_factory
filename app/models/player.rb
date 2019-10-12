@@ -8,6 +8,7 @@ class Player < ApplicationRecord
   has_one    :house
   has_many   :sissies
   has_many   :items
+  has_one    :weapon, -> { weapon.order('modifier DESC').limit(1) }, class_name: 'Item'
 
   # === Enum ===
   enum gender: [:male, :female, :shemale]

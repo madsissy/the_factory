@@ -11,6 +11,7 @@ RSpec.describe Player, type: :model do
     it { is_expected.to have_one(:factory) }
     it { is_expected.to have_many(:sissies) }
     it { is_expected.to have_many(:items) }
+    it { is_expected.to have_one(:weapon).class_name('Item') }
   end
 
   describe 'enums' do

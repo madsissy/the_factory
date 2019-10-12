@@ -16,7 +16,7 @@ RSpec.describe Sissy::Recruit do
     end
 
     context 'player intimidation is greater or equal to sissy\'s will' do
-      before{ sissy.player.update(seduction: 60) }
+      before{ sissy.player.update(intimidation: 60) }
 
       it 'returns true and sets owned' do
         expect(subject.recruit   ).to eq true
@@ -30,6 +30,18 @@ RSpec.describe Sissy::Recruit do
 
       it 'returns true' do
         expect(subject.recruit).to eq false
+      end
+    end
+
+    context 'player has a weapon' do
+      let!(:weapon) { create(:weapon, player: sissy.player) }
+      before{ sissy.player.update(intimidation: 30) }
+
+      it 'adds weapon modifier to player intimidation' do
+
+        expect(subject.recruit   ).to eq true
+        expect(sissy.owned       ).to eq true
+        expect(sissy.in_factory? ).to eq true
       end
     end
   end
