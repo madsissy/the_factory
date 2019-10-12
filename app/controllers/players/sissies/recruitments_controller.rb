@@ -11,10 +11,8 @@ class Players::Sissies::RecruitmentsController < Players::BaseController
 
   def consume_player_energy
     # Needs not to be called on page refresh
-    unless @player.enough_energy? 2
+    unless PlayerService.new(@player).handle_energy(-2)
       redirect_back(fallback_location: player_houses_path(@player), flash: { alert: 'You are too tired!' })
     end
-
-    PlayerService.new(@player).handle_energy(-2)
   end
 end

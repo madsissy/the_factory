@@ -6,19 +6,21 @@ RSpec.describe Player::HandleEnergy do
 
   describe 'Handle and caps players energy' do
     it 'update energy attributes' do
-      subject.handle_energy(-5)
+      expect(subject.handle_energy(-5)).to eq true
       expect(player.energy).to eq 5
 
-      subject.handle_energy(5)
+      expect(subject.handle_energy(5)).to eq true
       expect(player.energy).to eq 10
     end
 
     it 'caps player energy' do
-      subject.handle_energy(-20)
-      expect(player.energy).to eq 0
-
-      subject.handle_energy(100)
+      puts player.enough_energy? 100
+      expect(subject.handle_energy(100)).to eq true
       expect(player.energy).to eq 10
+    end
+
+    it 'returns false if not enough energy' do
+      expect(subject.handle_energy(-12)).to eq false
     end
   end
 

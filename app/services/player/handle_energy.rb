@@ -1,11 +1,14 @@
 module Player::HandleEnergy
 
   def handle_energy integer
-    player.energy += integer
+    unless integer < 0 && !@player.enough_energy?(integer.abs)
+      player.energy += integer
 
-    player.energy = 0   if player.energy < 0
-    player.energy = 10  if player.energy > 10
+      player.energy = 10  if player.energy > 10
 
-    player.save!
+      player.save!
+    else
+      false
+    end
   end
 end
