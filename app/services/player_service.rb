@@ -1,5 +1,6 @@
 class PlayerService
   include Player::HandleEnergy
+  include Player::HandleMoney
   include Player::HandleSleep
 
   def initialize player=nil

@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
     resource :intro,          only: [:show],     to: 'players/intros#show'
     resource :streets,        only: [:show],     to: 'players/streets#show'
-    resource :black_markets,  only: [:show],     to: 'players/black_markets#show'
     resource :houses,         only: [:show],     to: 'players/houses#show' do
       resources :sleeps,      only: [:create],   to: 'players/houses/sleeps#create'
+    end
+    resource :black_markets,  only: [:show],           controller: 'players/black_markets' do
+      resources :weapons,     only: [:index, :create], controller: 'players/black_markets/weapons'
+      resources :drugs,       only: [:index, :create], controller: 'players/black_markets/drugs'
+      # slave market
     end
     resource :factories,      only: [:show],     to: 'players/factories#show' do
       resource :dungeons,     only: [:show],     to: 'players/factories/dungeons#show'

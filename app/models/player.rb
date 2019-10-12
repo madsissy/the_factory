@@ -32,4 +32,8 @@ class Player < ApplicationRecord
   def enough_energy? energy_needed
     energy >= energy_needed
   end
+
+  def enough_fund? fund_needed
+    wallet_amount >= fund_needed
+  end
 end

@@ -53,5 +53,11 @@ RSpec.describe Player, type: :model do
       expect(player.enough_energy?(3)).to eq false
       expect(player.enough_energy?(2)).to eq true
     end
+
+    it '#enough_fund?' do
+      player = build(:player, wallet_amount: 100)
+      expect(player.enough_fund?(300)).to eq false
+      expect(player.enough_fund?(20)).to eq true
+    end
   end
 end
