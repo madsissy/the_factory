@@ -6,14 +6,17 @@ class Players::BlackMarkets::WeaponsController < Players::BaseController
   end
 
   def create
-    @weapon = @player.items.create(weapon_params)
+    @weapon = @player.items.build(weapon_params)
 
-    puts "weapon: #{@weapon}"
-    if @player.enough_fund?(@weapon.price) && @weapon.save
+    unless @player.enough_fund?(@weapon.price)
+      return redirect_to player_black_markets_weapons_path(@player), flash: { notice: "Not enough fund !"}
+    end
+
+    if @weapon.save
       PlayerService.new(@player).handle_money(- @weapon.price)
       redirect_to player_black_markets_weapons_path(@player), flash: { notice: "#{@weapon.name} buyed"}
     else
-      redirect_to player_black_markets_weapons_path(@player), flash: { notice: "Not enough fund !"}
+      redirect_to player_black_markets_weapons_path(@player), flash: { notice: "An error has occured :O"}
     end
   end
 
