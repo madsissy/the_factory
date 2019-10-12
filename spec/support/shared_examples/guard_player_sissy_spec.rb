@@ -2,7 +2,9 @@ require 'rails_helper'
 
 shared_examples_for 'guard player sissy' do
 
-  it 'set sissy if associated to player' do
-    expect( controller.instance_variable_get(:@sissy) ).to eq player_sissy
+  describe 'Control sissy is owned by player' do
+    it 'redirect if sissy is not owned' do
+      expect(response).to redirect_to player_factories_path(player)
+    end
   end
 end
