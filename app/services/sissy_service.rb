@@ -1,7 +1,8 @@
 class SissyService
-  include Sissy::Create
-  include Sissy::Recruit
   include Sissy::ComputeGlobalScore
+  include Sissy::Create
+  include Sissy::HandleWill
+  include Sissy::Recruit
 
   def initialize sissy=nil, player: nil
     @sissy  = sissy

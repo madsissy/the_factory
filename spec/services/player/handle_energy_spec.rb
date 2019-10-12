@@ -14,7 +14,6 @@ RSpec.describe Player::HandleEnergy do
     end
 
     it 'caps player energy' do
-      puts player.enough_energy? 100
       expect(subject.handle_energy(100)).to eq true
       expect(player.energy).to eq 10
     end

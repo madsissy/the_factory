@@ -6,6 +6,7 @@ class Players::Factories::DungeonsController < Players::BaseController
   end
 
   def bondage
+    handle_sissy_will
   end
 
   private
@@ -15,5 +16,9 @@ class Players::Factories::DungeonsController < Players::BaseController
       unless PlayerService.new(@player).handle_energy(-1)
         redirect_back(fallback_location: player_factories_path(@player), flash: { alert: 'You are too tired!' })
       end
+    end
+
+    def handle_sissy_will
+      SissyService.new(@sissy).handle_will(-10)
     end
 end
