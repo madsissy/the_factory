@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
     resource :black_markets,  only: [:show],           controller: 'players/black_markets' do
       resources :weapons,     only: [:index, :create], controller: 'players/black_markets/weapons'
-      resources :drugs,       only: [:index, :create], controller: 'players/black_markets/drugs'
+      # drugs
       # slave market
     end
     resource :factories,      only: [:show],     to: 'players/factories#show' do
