@@ -10,4 +10,5 @@
 
       .row
         .col-lg-6
-          = link_to 'Continue', player_factories_path(@player), class: ''
+          %p= link_to 'Add more hours', bondage_player_factories_path(@player, sissy_id: @sissy.id)
+          %p= link_to 'Continue', player_factories_path(@player)

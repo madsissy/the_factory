@@ -17,6 +17,9 @@
                       = sissy.full_name
                     %span
                       = sissy.will
+                    - if sissy.current_job
+                      %span
+                        = "Works as #{sissy.current_job.job.name}"
                   .col-lg-4
                     %p= link_to 'Inspect the sissy',edit_player_sissy_path(@player, sissy)
                     %p= link_to 'Bring to dungeon', player_factories_dungeons_path(@player, sissy_id: sissy.id)
