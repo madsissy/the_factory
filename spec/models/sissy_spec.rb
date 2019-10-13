@@ -6,6 +6,7 @@ RSpec.describe Sissy, type: :model do
     it { is_expected.to belong_to(:player) }
     it { is_expected.to have_many(:sissy_jobs) }
     it { is_expected.to have_many(:jobs).through(:sissy_jobs) }
+    it { is_expected.to have_one(:current_job).class_name('SissyJob') }
   end
 
   describe 'enums' do

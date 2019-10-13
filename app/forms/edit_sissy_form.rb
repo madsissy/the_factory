@@ -14,7 +14,7 @@ class EditSissyForm < Form
     self.firstname = @sissy.firstname
     self.lastname  = @sissy.lastname
     self.surname   = @sissy.surname
-    self.job_name  = nil
+    self.job_name  = @sissy.current_job&.job&.name
   end
 
   def save
