@@ -1,4 +1,5 @@
 class Players::SissiesController < Players::BaseController
+  before_action :set_sissy, only: [:edit, :update]
 
   def new
     if params[:new_search]
@@ -13,7 +14,28 @@ class Players::SissiesController < Players::BaseController
     end
   end
 
+  def edit
+    @form = build_form
+  end
+
+  def update
+    @form = build_form
+    if @form.save
+      redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: 'Sissy has accepted her changings.' }
+    else
+      render :edit
+    end
+  end
+
   private
+
+    def set_sissy
+      @sissy = Sissy.find(params[:id])
+    end
+
+    def build_form
+      EditSissyForm.build_from(@sissy)
+    end
 
     def create_new_sissy location
       SissyService.new(nil, player: @player).create(location)
@@ -29,5 +51,9 @@ class Players::SissiesController < Players::BaseController
 
     def destroy_last_sissy
       @player.sissies.last.destroy
+    end
+
+    def sissy_params
+      params.require(:sissy).permit(:firstname, :lastname, :surname)
     end
 end

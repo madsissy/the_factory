@@ -1,0 +1,14 @@
+.container.mt30
+  .row
+    .col-lg-6
+      = image_tag 'factory.jpg', class: 'places-pics'
+    .col-lg-6
+      .row
+        .col-lg-8
+          %h2.title-h2 Inspection
+          %p= "#{@sissy.firstname} walks to you and kneels, keeping her eyes low."
+          = simple_form_for @form, url: player_sissy_path(@player, @sissy), method: :patch do |f|
+            = f.input :firstname
+            = f.input :lastname
+            = f.input :surname
+            = f.button :submit, 'Start', class: 'button-primary-outline button-sm'

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :bondage,                              to: 'players/factories/dungeons#bondage'
     end
 
-    resources :sissies,  only: [:new],   controller: 'players/sissies' do
+    resources :sissies,  only: [:new, :edit, :update],   controller: 'players/sissies' do
       resources :recruitments, only: [:new], controller: 'players/sissies/recruitments'
     end
   end

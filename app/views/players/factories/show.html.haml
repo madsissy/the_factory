@@ -18,7 +18,8 @@
                     %span
                       = sissy.will
                   .col-lg-4
-                    =link_to 'Bring to dungeon', player_factories_dungeons_path(@player, sissy_id: sissy.id)
+                    %p= link_to 'Inspect the sissy',edit_player_sissy_path(@player, sissy)
+                    %p= link_to 'Bring to dungeon', player_factories_dungeons_path(@player, sissy_id: sissy.id)
 
       .row
         .col-lg-2
