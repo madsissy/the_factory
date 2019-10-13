@@ -4,10 +4,11 @@ class Player < ApplicationRecord
 
   #  === Relations ===
   belongs_to :user
-  has_one    :factory
-  has_one    :house
   has_many   :sissies
   has_many   :items
+  has_one    :factory
+  has_one    :house
+  has_one    :day_recap
   has_one    :weapon, -> { weapon.order('modifier DESC').limit(1) }, class_name: 'Item'
 
   # === Enum ===

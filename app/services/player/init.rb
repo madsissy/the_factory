@@ -12,6 +12,7 @@ module Player::Init
     if player.save
       player.create_house(upkeep: 100, level: 1)
       player.create_factory(upkeep: 100, level: 1)
+      player.create_day_recap(recap_day: player.current_date)
     end
 
     player

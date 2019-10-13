@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_123637) do
+ActiveRecord::Schema.define(version: 2019_10_13_130222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "day_recaps", force: :cascade do |t|
+    t.integer "player_id"
+    t.datetime "recap_day"
+    t.integer "earnings"
+    t.integer "losses"
+    t.integer "total"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_day_recaps_on_player_id", unique: true
+  end
 
   create_table "factories", force: :cascade do |t|
     t.integer "player_id"
