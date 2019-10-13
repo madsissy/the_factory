@@ -9,5 +9,6 @@ class CreateSissyJob < ActiveRecord::Migration[6.0]
 
     add_index :sissy_jobs, :sissy_id
     add_index :sissy_jobs, :job_id
+    add_index :sissy_jobs, [:sissy_id, :job_id], unique: true
   end
 end

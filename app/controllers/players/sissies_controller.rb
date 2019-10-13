@@ -20,8 +20,11 @@ class Players::SissiesController < Players::BaseController
 
   def update
     @form = build_form
-    if @form.save
-      redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: 'Sissy has accepted her changings.' }
+    @form.assign_attributes(sissy_params)
+
+    if result = @form.save
+      puts "@form.save: #{@form.save}"
+      redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: result.to_s }
     else
       render :edit
     end
@@ -54,6 +57,6 @@ class Players::SissiesController < Players::BaseController
     end
 
     def sissy_params
-      params.require(:sissy).permit(:firstname, :lastname, :surname)
+      params.require(:edit_sissy_form).permit(:firstname, :lastname, :surname, :job_name)
     end
 end

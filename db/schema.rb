@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_064109) do
     t.integer "experience"
     t.boolean "current_job"
     t.index ["job_id"], name: "index_sissy_jobs_on_job_id"
+    t.index ["sissy_id", "job_id"], name: "index_sissy_jobs_on_sissy_id_and_job_id", unique: true
     t.index ["sissy_id"], name: "index_sissy_jobs_on_sissy_id"
   end
 

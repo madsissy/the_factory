@@ -11,4 +11,5 @@
             = f.input :firstname
             = f.input :lastname
             = f.input :surname
+            = f.input :job_name, collection: Job.all.map{ |job| job.name }
             = f.button :submit, 'Start', class: 'button-primary-outline button-sm'

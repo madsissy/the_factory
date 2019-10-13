@@ -4,6 +4,8 @@ RSpec.describe Sissy, type: :model do
 
   describe 'relations' do
     it { is_expected.to belong_to(:player) }
+    it { is_expected.to have_many(:sissy_jobs) }
+    it { is_expected.to have_many(:jobs).through(:sissy_jobs) }
   end
 
   describe 'enums' do
