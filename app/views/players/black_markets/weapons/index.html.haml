@@ -4,24 +4,27 @@
       = image_tag 'black_market.jpg', class: 'places-pics'
     .col-lg-6
       .row
-        .col-lg-8
+        .col-lg-12
           %h2.title-h2 The weapon shop
           %p These things can be useful
           - @weapons.each do |weapon|
-            %ul.custom-list
-              = simple_form_for @weapon, url: player_black_markets_weapons_path(@player), method: :post do |f|
-                = f.hidden_field :kind, value: weapon.kind
-                = f.hidden_field :name, value: weapon.name
-                = f.hidden_field :price, value: weapon.price
-                = f.hidden_field :quantity, value: weapon.quantity
-                = f.hidden_field :modifier, value: weapon.modifier
-                = f.hidden_field :modified_attribute, value: weapon.modified_attribute
-                %li
-                  %p= weapon.name
-                  %p
-                    %i.lni-yen
-                    = weapon.price
-                  %p= f.submit 'Buy', class: 'btn-primary btn-md'
+            .row
+              %ul.custom-list
+                = simple_form_for @weapon, url: player_black_markets_weapons_path(@player), method: :post do |f|
+                  = f.hidden_field :kind, value: weapon.kind
+                  = f.hidden_field :name, value: weapon.name
+                  = f.hidden_field :price, value: weapon.price
+                  = f.hidden_field :quantity, value: weapon.quantity
+                  = f.hidden_field :modifier, value: weapon.modifier
+                  = f.hidden_field :modified_attribute, value: weapon.modified_attribute
+                  .col-lg-6.mb30
+                    %li.card
+                      = image_tag "weapons/#{weapon.name.downcase.gsub(' ', '_')}.jpg"
+                      %p= weapon.name
+                      %p
+                        %i.lni-yen
+                        = weapon.price
+                      %p= f.submit 'Buy', class: 'button-primary button-sm'
 
       .row
         .col-lg-2

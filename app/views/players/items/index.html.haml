@@ -1,23 +1,22 @@
 .container.mt30
+  %h2.title-h2 Inventory
   .row
     .col-lg-6
-      = image_tag 'factory.jpg', class: 'places-pics'
-    .col-lg-6
-
-      .row
-        .col-lg-12
-          %h2.title-h2 Inventory
-
-          %ul.custom-list.custom-list-bold
-            - @weapons.each do |weapon|
-              %li
+      %h5.title-h5 Weapons
+      %ul.custom-list.custom-list-bold
+        .row
+          - @weapons.each do |weapon|
+            .col-lg-6.mb30
+              %li.card
+                = image_tag "weapons/#{weapon.name.downcase.gsub(' ', '_')}.jpg"
                 %p= weapon.name
 
-          %ul.custom-list.custom-list-bold
-            - @drugs.each do |drug|
-              %li
-                %p= drug.name
+    .col-lg-6
+      -# %ul.custom-list.custom-list-bold
+      -#   - @drugs.each do |drug|
+      -#     %li
+      -#       %p= drug.name
 
-      .row
-        .col-lg-6
-          = link_to 'Back', :back, class: 'button-primary-outline button-md'
+  .row
+    .col-lg-6
+      = link_to 'Back', :back, class: 'button-primary-outline button-md'
