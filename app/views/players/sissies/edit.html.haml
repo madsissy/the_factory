@@ -13,3 +13,9 @@
             = f.input :surname
             = f.input :job_name, collection: Job.all.map{ |job| job.name }
             = f.button :submit, 'Start', class: 'button-primary-outline button-sm'
+
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6
+          = link_to 'Your Factory', player_factories_path(@player)

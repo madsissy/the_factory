@@ -102,6 +102,9 @@ RSpec.describe Sissy, type: :model do
     it '#full_name' do
       sissy = build(:sissy, firstname: 'Sissy', lastname: 'Lou')
       expect(sissy.full_name).to eq "Sissy Lou"
+
+      sissy.surname = 'Slut'
+      expect(sissy.full_name).to eq "Sissy 'Slut' Lou"
     end
 
     it '#age_from_birthdate' do
