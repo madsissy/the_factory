@@ -13,8 +13,8 @@
     button{color:#C39C32;}
   }
   &.notice{
-    background:#FFFFFF; color:#3CB591; border: 1px solid #E5E5E5;
-    button{color:#3CB591;}
+    background:#FFFFFF; color: $primary; border: 1px solid #E5E5E5;
+    button{color:$primary;}
   }
   button{
     background:none; border:none; padding:0; outline:none; cursor:pointer;

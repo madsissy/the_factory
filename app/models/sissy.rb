@@ -53,7 +53,7 @@ class Sissy < ApplicationRecord
 
   #  === Methods ===
   def full_name
-    surname ? "#{firstname} '#{surname}' #{lastname}" : "#{firstname} #{lastname}"
+    surname.present? ? "#{firstname} '#{surname}' #{lastname}" : "#{firstname} #{lastname}"
   end
 
   def age_from_birthdate

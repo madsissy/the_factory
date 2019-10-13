@@ -23,7 +23,6 @@ class Players::SissiesController < Players::BaseController
     @form.assign_attributes(sissy_params)
 
     if result = @form.save
-      puts "@form.save: #{@form.save}"
       redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: result }
     else
       render :edit
