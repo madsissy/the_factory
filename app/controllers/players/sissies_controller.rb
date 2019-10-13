@@ -24,7 +24,7 @@ class Players::SissiesController < Players::BaseController
 
     if result = @form.save
       puts "@form.save: #{@form.save}"
-      redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: result.to_s }
+      redirect_to edit_player_sissy_path(@player, @sissy), flash: { notice: result }
     else
       render :edit
     end

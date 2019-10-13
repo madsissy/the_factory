@@ -1,6 +1,7 @@
 class SissyService
   include Sissy::ComputeGlobalScore
   include Sissy::Create
+  include Sissy::CreateOrUpdateJob
   include Sissy::HandleWill
   include Sissy::Recruit
 

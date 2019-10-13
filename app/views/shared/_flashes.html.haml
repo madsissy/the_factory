@@ -5,4 +5,9 @@
         .row
           .col.text-center
             %button.close{type: "button", data: {dismiss: "alert"}} &times;
-            = raw flash[value]
+            - if flash[value].kind_of?(Array)
+              %ul.custom-list
+                - flash[value].each do |message|
+                  %li= message
+            - else
+              = raw flash[value]

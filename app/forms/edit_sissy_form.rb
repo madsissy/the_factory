@@ -33,8 +33,11 @@ class EditSissyForm < Form
     end
 
     if job_name.present?
-      create_or_update_job job_name
-      result_notice << "Sissy will work has a #{job_name}."
+      if create_or_update_job(job_name)
+        result_notice << "Sissy will work has a #{job_name}."
+      else
+        result_notice << "Sissy won't work has a #{job_name}. Need more training !"
+      end
     end
 
     return result_notice
@@ -47,13 +50,6 @@ class EditSissyForm < Form
   end
 
   def create_or_update_job job_name
-    job = Job.find_by(name: job_name)
-    @sissy.sissy_jobs.update_all(current_job: false)
-
-    if @sissy.jobs.where(name: job_name).empty?
-      @sissy.sissy_jobs.create(job: job, experience: 0, current_job: true)
-    else
-      @sissy.sissy_jobs.find_by(job_id: job.id).update(current_job: true)
-    end
+    SissyService.new(@sissy).create_or_update_job(job_name)
   end
 end
