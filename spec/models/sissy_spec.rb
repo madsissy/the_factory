@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Sissy, type: :model do
+  describe 'constants' do
+    it { expect(described_class).to have_constant(:WILL_TRESHOLD) }
+  end
 
   describe 'relations' do
     it { is_expected.to belong_to(:player) }

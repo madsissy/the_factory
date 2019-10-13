@@ -64,6 +64,9 @@ RSpec.configure do |config|
   config.append_after(:each) do
     DatabaseCleaner.clean
   end
+
+  # Enable methods for form objects
+  config.include(Shoulda::Matchers::ActiveModel, type: :form)
 end
 
 ## CUSTOM

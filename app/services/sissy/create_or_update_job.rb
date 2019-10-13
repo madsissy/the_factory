@@ -2,10 +2,9 @@ module Sissy::CreateOrUpdateJob
 
   def create_or_update_job job_name
     job = Job.find_by(name: job_name)
+    @sissy.sissy_jobs.update_all(current_job: false)
 
     if has_required_stats? job
-      @sissy.sissy_jobs.update_all(current_job: false)
-
       if @sissy.jobs.where(name: job_name).empty?
         @sissy.sissy_jobs.create(job: job, experience: 0, current_job: true)
       else
