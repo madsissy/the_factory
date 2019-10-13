@@ -9,7 +9,8 @@
             .col-lg-6.mb30
               %li.card
                 = image_tag "weapons/#{weapon.name.downcase.gsub(' ', '_')}.jpg"
-                %p= weapon.name
+                .card-content
+                  %p= weapon.name
 
     .col-lg-6
       -# %ul.custom-list.custom-list-bold

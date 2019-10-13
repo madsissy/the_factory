@@ -20,11 +20,12 @@
                   .col-lg-6.mb30
                     %li.card
                       = image_tag "weapons/#{weapon.name.downcase.gsub(' ', '_')}.jpg"
-                      %p= weapon.name
-                      %p
-                        %i.lni-yen
-                        = weapon.price
-                      %p= f.submit 'Buy', class: 'button-primary button-sm'
+                      .card-content
+                        %p= weapon.name
+                        %p
+                          %i.lni-yen
+                          = weapon.price
+                        %p= f.submit 'Buy', class: 'button-primary button-sm'
 
       .row
         .col-lg-2
