@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     end
 
     resources :sissies,  only: [:new, :edit, :update],   controller: 'players/sissies' do
-      resources :recruitments, only: [:new], controller: 'players/sissies/recruitments'
+      resource :sex_relations, only: [], controller: 'players/sissies/sex_relations' do
+        get 'oral', to: 'players/sissies/sex_relations#oral'
+        get 'anal', to: 'players/sissies/sex_relations#anal'
+      end
+      resources :recruitments, only: [:new],  controller: 'players/sissies/recruitments'
     end
   end
 
