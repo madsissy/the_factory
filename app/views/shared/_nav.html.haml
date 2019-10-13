@@ -4,7 +4,7 @@
       .logo
         = link_to root_path do
           = image_tag 'logo_factory.png'
-    - if @player
+    - if @player && @player.persisted?
       .col-auto
         = render 'shared/player_info', player: @player
     .col
@@ -14,7 +14,7 @@
           = link_to 'Sign up', new_user_registration_path, class: 'button-primary button-sm'
         - else
           .row
-            - if @player
+            - if @player && @player.persisted?
               .col-auto
                 = link_to 'Inventory', player_items_path(@player), class: 'button-secondary button-sm'
             .col

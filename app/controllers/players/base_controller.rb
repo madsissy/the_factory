@@ -4,6 +4,6 @@ class Players::BaseController < ApplicationController
 
   private
     def set_player
-      @player ||= Player.find(params[:player_id])
+      @player ||= current_user.players.find_by_id(params[:player_id])
     end
 end
