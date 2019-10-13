@@ -13,8 +13,11 @@
         .col-lg-2
           %p Actions
         .col-lg-6
-          = link_to 'Use her mouth', oral_player_sissy_sex_relations_path(@player, @sissy, kind: 'oral')
-          = link_to 'Use her ass',   anal_player_sissy_sex_relations_path(@player, @sissy, kind: 'anal')
+          %ul.custom-list
+            %li= link_to 'Use her mouth', oral_player_sissy_sex_relations_path(@player, @sissy)
+            %li= link_to 'Use her ass',   anal_player_sissy_sex_relations_path(@player, @sissy)
+            - if @sissy.sub_skill >= Sissy::SUB_SKILL_THRESHOLD
+              %li= link_to 'Dominate her',  bdsm_player_sissy_sex_relations_path(@player, @sissy)
 
       .row.mt30
         .col-lg-2

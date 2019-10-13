@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Sissy, type: :model do
   describe 'constants' do
-    it { expect(described_class).to have_constant(:WILL_TRESHOLD) }
+    it { expect(described_class).to have_constant(:WILL_THRESHOLD) }
+    it { expect(described_class).to have_constant(:SUB_SKILL_THRESHOLD) }
   end
 
   describe 'relations' do

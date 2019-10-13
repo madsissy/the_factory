@@ -1,6 +1,7 @@
 class Sissy < ApplicationRecord
   # === Constants ===
-  WILL_TRESHOLD = 50
+  WILL_THRESHOLD        = 50
+  SUB_SKILL_THRESHOLD   = 60
 
   #  === Relations ===
   belongs_to :player

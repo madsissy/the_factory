@@ -21,7 +21,7 @@ class EditSissyForm < Form
     result_notice = []
     return unless valid?
 
-    unless sissy_info_changed? && @sissy.will >= Sissy::WILL_TRESHOLD
+    unless sissy_info_changed? && @sissy.will >= Sissy::WILL_THRESHOLD
       @sissy.update(
         firstname: self.firstname,
         lastname:  self.lastname,
