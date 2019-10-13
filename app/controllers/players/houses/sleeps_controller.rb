@@ -2,7 +2,7 @@ class Players::Houses::SleepsController < Players::BaseController
 
   def create
     handle_player_sleep
-    redirect_to player_houses_path(@player)
+    redirect_to new_player_day_recap_path(@player)
   end
 
   private

@@ -1,4 +1,6 @@
 class Sissy < ApplicationRecord
+  # TODO: add health / food & water consumption
+
   # === Constants ===
   WILL_THRESHOLD        = 50
   SUB_SKILL_THRESHOLD   = 60

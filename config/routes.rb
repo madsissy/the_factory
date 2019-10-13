@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       end
       resources :recruitments, only: [:new],  controller: 'players/sissies/recruitments'
     end
+
+    resources :day_recaps, only: [:new], controller: 'players/day_recaps'
   end
 
 end

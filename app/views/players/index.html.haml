@@ -9,8 +9,8 @@
           %h2.title-h2 Current games
           %ul.players-list.custom-list.custom-list-bold
             - @players.each do |player|
-              %li.player-item
-                .row
+              %li.player-item.card
+                .row.card-content
                   .col-lg-4
                     =link_to player_houses_path(player) do
                       = player.full_name

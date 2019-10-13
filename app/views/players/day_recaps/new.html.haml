@@ -1,0 +1,13 @@
+.container.mt30
+  .row
+    .col-lg-6
+      = image_tag 'penthouse.jpg', class: 'places-pics'
+    .col-lg-6
+      .row
+        .col-lg-8
+          %h2.title-h2= "Day #{(@player.current_date - 1.day).strftime('%m/%d/%Y')}"
+          
+
+      .row
+        .col-lg-12
+          %p= link_to 'Continue', player_houses_path(@player)
