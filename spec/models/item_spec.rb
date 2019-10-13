@@ -8,7 +8,7 @@ RSpec.describe Item, type: :model do
 
   describe 'enums' do
     it '#kind' do
-      item = build(:item)
+      item = build(:weapon)
       expect(item.kind ).to eq 'weapon'
       expect(item.drug!).to eq true
       expect(item.drug?).to eq true
