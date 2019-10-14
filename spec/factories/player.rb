@@ -10,5 +10,11 @@ FactoryBot.define do
     intimidation    { 30 }
 
     association     :user
+
+    factory :initialized_player, traits: [:with_day_recap, :with_house, :with_factory]
+
+    trait :with_day_recap do association :day_recap end
+    trait :with_house do association :house end
+    trait :with_factory do association :factory end
   end
 end
