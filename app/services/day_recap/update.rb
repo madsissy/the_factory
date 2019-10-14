@@ -16,7 +16,7 @@ module DayRecap::Update
 
   def compute_earnings
     # TODO: More complex rule with each worker
-    @earnings ||= players.sissies.prostitutes.count * 100
+    @earnings ||= player.sissies.prostitutes.count * 100
   end
 
   def compute_losses

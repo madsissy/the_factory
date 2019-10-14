@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       resources :recruitments, only: [:new],  controller: 'players/sissies/recruitments'
     end
 
-    resources :day_recaps, only: [:show, :update], controller: 'players/day_recaps'
+    resources :day_recaps, only: [:show], controller: 'players/day_recaps'
   end
 
 end

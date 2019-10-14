@@ -6,7 +6,11 @@
       .row
         .col-lg-8
           %h2.title-h2= "Day #{(@player.current_date - 1.day).strftime('%m/%d/%Y')}"
-          
+          %ul.custom-list
+            %li= "Earnings: #{@day_recap.earnings} ¥"
+            %li= "Losses: #{@day_recap.losses} ¥"
+            %li= "Total: #{@day_recap.total} ¥"
+
 
       .row
         .col-lg-12

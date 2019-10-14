@@ -1,12 +1,14 @@
 class Players::DayRecapsController < Players::BaseController
-
-  def update
-    DayRecapService.new(@player.day_recap, player: @player).update
-    redirect_to player_day_recap_path(@player, @player.day_recap)
-  end
+  before_action :update_day_recap
 
   def show
     @day_recap = @player.day_recap
+  end
+
+  private
+
+  def update_day_recap
+    DayRecapService.new(@player.day_recap, player: @player).update
   end
 
 end
