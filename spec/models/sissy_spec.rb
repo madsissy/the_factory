@@ -13,6 +13,24 @@ RSpec.describe Sissy, type: :model do
     it { is_expected.to have_one(:current_job).class_name('SissyJob') }
   end
 
+  describe 'scopes' do
+    let(:prostitute_job)    { create(:job, :prostitute) }
+    let(:maid_job)          { create(:job, :maid) }
+    let!(:prostitute_sissy) { create(:sissy, :with_jobs, jobs: [prostitute_job]) }
+    let!(:maid_sissy)       { create(:sissy, :with_jobs, jobs: [maid_job]) }
+    it '#prostitutes' do
+      prostitute_sissy.sissy_jobs.first.update(current_job: true)
+
+      expect(described_class.prostitutes).to eq [prostitute_sissy]
+    end
+
+    it '#maids' do
+      maid_sissy.sissy_jobs.first.update(current_job: true)
+
+      expect(described_class.maids).to eq [maid_sissy]
+    end
+  end
+
   describe 'enums' do
     before { @sissy = build(:sissy) }
 

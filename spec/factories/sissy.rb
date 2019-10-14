@@ -22,5 +22,10 @@ FactoryBot.define do
     sub_skill       { rand(0..100) }
 
     association     :player
+
+    trait :with_jobs do
+      transient do jobs { [] } end
+      after(:create) do |sissy, evaluator| sissy.jobs << evaluator.jobs end
+    end
   end
 end

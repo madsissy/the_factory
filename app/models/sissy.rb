@@ -13,6 +13,7 @@ class Sissy < ApplicationRecord
 
   # === Scopes ===
   scope :prostitutes, -> { joins(sissy_jobs: :job).where(sissy_jobs: { current_job: true }, jobs: { name: 'Prostitute' } ) }
+  scope :maids,       -> { joins(sissy_jobs: :job).where(sissy_jobs: { current_job: true }, jobs: { name: 'Maid' } ) }
 
   # === Enum ===
   enum hair_color:      [:blond_hair, :platinum_blond_hair, :brown_hair, :dark_brown_hair, :jet_black_hair, :ginger_hair, :red_hair, :pink_hair, :green_hair, :blue_hair]
