@@ -1,15 +1,15 @@
 module DayRecap::Update
 
   def update
-    day_recap.update(
-      recap_day: player.current_date - 1.day,
-      earnings: compute_earnings,
-      losses:   compute_losses,
-      total:    compute_earnings - compute_losses
-    )
+    ActiveRecord::Base.transaction do
+      return false unless update_day_recap
 
-    player.wallet_amount += day_recap.total
-    player.save
+      player.wallet_amount += day_recap.total
+
+      raise ActiveRecord::Rollback unless player.save!
+
+      true
+    end
   end
 
   private
@@ -21,5 +21,14 @@ module DayRecap::Update
 
   def compute_losses
     @losses ||= player.factory.upkeep + player.house.upkeep
+  end
+
+  def update_day_recap
+    day_recap.update!(
+      recap_day: player.current_date - 1.day,
+      earnings: compute_earnings,
+      losses: compute_losses,
+      total: compute_earnings - compute_losses
+    )
   end
 end
