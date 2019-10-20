@@ -33,8 +33,4 @@ class Players::BlackMarkets::WeaponsController < Players::BaseController
   def weapon_params
     params.require(:item).permit(:kind, :name, :quantity, :price, :modifier, :modified_attribute)
   end
-
-  def handle_player_money
-    PlayerService.new(@player).handle_money(@weapon.price)
-  end
 end

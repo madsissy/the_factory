@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       resources :sleeps,      only: [:create],   to: 'players/houses/sleeps#create'
     end
     resource :black_markets,  only: [:show],           controller: 'players/black_markets' do
-      resources :weapons,     only: [:index, :create], controller: 'players/black_markets/weapons'
+      resources :weapons,       only: [:index, :create], controller: 'players/black_markets/weapons'
+      resources :sissy_clothes, only: [:index, :create], controller: 'players/black_markets/sissy_clothes'
       # drugs
       # slave market
     end

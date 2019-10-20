@@ -1,0 +1,25 @@
+.container.mt30
+  .row
+    .col-lg-6
+      %h2.title-h2 The clothes shop
+      %p To Dress your sissies
+      - @clothes.each do |clothe|
+        .row
+          %ul.custom-list
+            = simple_form_for @sissy_clothe, url: player_black_markets_sissy_clothes_path(@player), method: :post do |f|
+              = f.hidden_field :clothe_id, value: clothe.id
+              .col-lg-6.mb30
+                %li.card
+                  = image_tag "clothes/#{clothe.name.downcase.gsub(' ', '_')}.jpg"
+                  .card-content
+                    %p= clothe.name
+                    %p
+                      %i.lni-yen
+                      = clothe.price
+                    %p= f.submit 'Buy', class: 'button-primary button-sm'
+
+      .row
+        .col-lg-2
+          %p Go to
+        .col-lg-6
+          %p= link_to 'The streets', player_black_markets_path(@player)
