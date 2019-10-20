@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_080418) do
+ActiveRecord::Schema.define(version: 2019_10_20_085001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,15 @@ ActiveRecord::Schema.define(version: 2019_10_19_080418) do
     t.integer "location"
     t.index ["location"], name: "index_sissies_on_location"
     t.index ["player_id"], name: "index_sissies_on_player_id"
+  end
+
+  create_table "sissy_clothes", force: :cascade do |t|
+    t.integer "sissy_id"
+    t.integer "clothe_id"
+    t.integer "player_id"
+    t.index ["clothe_id"], name: "index_sissy_clothes_on_clothe_id"
+    t.index ["player_id"], name: "index_sissy_clothes_on_player_id"
+    t.index ["sissy_id"], name: "index_sissy_clothes_on_sissy_id"
   end
 
   create_table "sissy_jobs", force: :cascade do |t|

@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Clothe, type: :model do
+  describe 'relations' do
+    it { is_expected.to have_many(:sissy_clothes) }
+  end
 
   describe 'enums' do
     it '#kind' do

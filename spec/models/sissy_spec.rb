@@ -11,6 +11,9 @@ RSpec.describe Sissy, type: :model do
     it { is_expected.to have_many(:sissy_jobs) }
     it { is_expected.to have_many(:jobs).through(:sissy_jobs) }
     it { is_expected.to have_one(:current_job).class_name('SissyJob') }
+    it { is_expected.to have_one(:shoes).class_name('SissyClothe') }
+    it { is_expected.to have_one(:outfit).class_name('SissyClothe') }
+    it { is_expected.to have_one(:headgear).class_name('SissyClothe') }
   end
 
   describe 'scopes' do

@@ -10,6 +10,9 @@ class Sissy < ApplicationRecord
   has_many   :sissy_jobs
   has_many   :jobs, through: :sissy_jobs
   has_one    :current_job, -> { where(current_job: true) }, class_name: 'SissyJob'
+  has_one    :shoes, -> { where(kind: 'shoes') }, class_name: 'SissyClothe'
+  has_one    :outfit, -> { where(kind: 'outfit') }, class_name: 'SissyClothe'
+  has_one    :headgear, -> { where(kind: 'headgear') }, class_name: 'SissyClothe'
 
   # === Scopes ===
   scope :prostitutes, -> { joins(sissy_jobs: :job).where(sissy_jobs: { current_job: true }, jobs: { name: 'Prostitute' } ) }

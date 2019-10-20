@@ -1,4 +1,6 @@
 class Clothe < ApplicationRecord
+  # === Relation ===
+  has_many :sissy_clothes
 
   # === Enum ===
   enum kind: [:shoes, :outfit, :headgear]
