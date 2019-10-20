@@ -56,6 +56,9 @@ class Players::SissiesController < Players::BaseController
     end
 
     def sissy_params
-      params.require(:edit_sissy_form).permit(:firstname, :lastname, :surname, :job_name)
+      params.require(:edit_sissy_form).permit(
+        :firstname, :lastname, :surname, :job_name,
+        :headgear, :outfit, :shoes
+      )
     end
 end

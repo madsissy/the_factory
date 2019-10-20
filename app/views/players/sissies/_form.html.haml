@@ -2,5 +2,8 @@
   = f.input :firstname
   = f.input :lastname
   = f.input :surname
-  = f.input :job_name, collection: Job.all.map{ |job| job.name }
+  = f.input :job_name,  collection: Job.all.map{ |job| job.name }
+  = f.input :headgear,  collection: @player.clothes.headgear.uniq.map{ |headgear| [headgear.name, headgear.id] }
+  = f.input :outfit,    collection: @player.clothes.outfit.uniq.map{ |outfit| [outfit.name, outfit.id] }
+  = f.input :shoes,     collection: @player.clothes.shoes.uniq.map{ |shoes| [shoes.name, shoes.id] }
   = f.button :submit, 'Start', class: 'button-primary-outline button-sm'

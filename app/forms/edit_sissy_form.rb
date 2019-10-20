@@ -1,5 +1,6 @@
 class EditSissyForm < Form
-  form_attributes :firstname, :lastname, :surname, :job_name
+  form_attributes :firstname, :lastname, :surname, :job_name,
+                  :headgear, :outfit, :shoes
 
   validates_presence_of :firstname
   validates_presence_of :lastname
@@ -15,6 +16,9 @@ class EditSissyForm < Form
     self.lastname  = @sissy.lastname
     self.surname   = @sissy.surname
     self.job_name  = @sissy.current_job&.job&.name
+    self.headgear  = @sissy.headgear
+    self.outfit    = @sissy.outfit
+    self.shoes     = @sissy.shoes
   end
 
   def save
@@ -31,6 +35,9 @@ class EditSissyForm < Form
     else
       result_notice << 'Sissy refused. Her will needs to be broken first.'
     end
+
+    maybe_assign_headgear if self.headgear
+    maybe_assign_outfit   if self.outfit
 
     if job_name.present?
       if create_or_update_job(job_name)
@@ -51,5 +58,15 @@ class EditSissyForm < Form
 
   def create_or_update_job job_name
     SissyService.new(@sissy).create_or_update_job(job_name)
+  end
+
+  def maybe_assign_headgear
+  end
+
+  def maybe_assign_outfit
+    outfit = SissyClothe.find(self.outfit)
+    if (outfit.clothe.will_needed >= @sissy.will) && (outfit.clothe.feminity_needed <= sissy.feminity) && (outfit.clothe.sub_skill_needed <= sissy.sub_skill)
+      outfit.update(sissy: @sissy)
+    end
   end
 end

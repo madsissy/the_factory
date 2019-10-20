@@ -7,6 +7,7 @@ class Player < ApplicationRecord
   has_many   :sissies
   has_many   :items
   has_many   :sissy_clothes
+  has_many   :clothes, through: :sissy_clothes
   has_one    :factory
   has_one    :house
   has_one    :day_recap
