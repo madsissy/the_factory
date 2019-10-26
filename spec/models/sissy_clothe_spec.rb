@@ -9,9 +9,10 @@ RSpec.describe SissyClothe, type: :model do
   end
 
   describe 'scopes' do
-    let!(:sissy_clothe_outfit)    { create(:sissy_clothe, :outfit) }
-    let!(:sissy_clothe_shoes)     { create(:sissy_clothe, :shoes) }
-    let!(:sissy_clothe_headgear)  { create(:sissy_clothe, :headgear) }
+    let(:sissy_clothe_outfit)    { create(:sissy_clothe, :outfit) }
+    let(:sissy_clothe_shoes)     { create(:sissy_clothe, :shoes) }
+    let(:sissy_clothe_headgear)  { create(:sissy_clothe, :headgear) }
+    let(:sissy_clothe_unweared)  { create(:sissy_clothe, sissy_id: nil) }
 
     it "#outfit" do
       expect(described_class.outfit).to eq [sissy_clothe_outfit]
@@ -23,6 +24,10 @@ RSpec.describe SissyClothe, type: :model do
 
     it "#headgear" do
       expect(described_class.headgear).to eq [sissy_clothe_headgear]
+    end
+
+    it "#unweared" do
+      expect(described_class.unweared).to eq [sissy_clothe_unweared]
     end
   end
 

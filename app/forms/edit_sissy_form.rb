@@ -36,8 +36,9 @@ class EditSissyForm < Form
       result_notice << 'Sissy refused. Her will needs to be broken first.'
     end
 
-    maybe_assign_headgear if self.headgear
-    maybe_assign_outfit   if self.outfit
+    maybe_assign_sissy_clothe(self.headgear)  if self.headgear.present?
+    maybe_assign_sissy_clothe(self.outfit)    if self.outfit.present?
+    maybe_assign_sissy_clothe(self.shoes)     if self.shoes.present?
 
     if job_name.present?
       if create_or_update_job(job_name)
@@ -60,13 +61,10 @@ class EditSissyForm < Form
     SissyService.new(@sissy).create_or_update_job(job_name)
   end
 
-  def maybe_assign_headgear
-  end
-
-  def maybe_assign_outfit
-    outfit = SissyClothe.find(self.outfit)
-    if (outfit.clothe.will_needed >= @sissy.will) && (outfit.clothe.feminity_needed <= sissy.feminity) && (outfit.clothe.sub_skill_needed <= sissy.sub_skill)
-      outfit.update(sissy: @sissy)
+  def maybe_assign_sissy_clothe sissy_clothe_id
+    sissy_clothe = SissyClothe.find(sissy_clothe_id)
+    if (sissy_clothe.clothe.will_needed >= @sissy.will) && (sissy_clothe.clothe.feminity_needed <= @sissy.feminity) && (sissy_clothe.clothe.sub_skill_needed <= @sissy.sub_skill)
+      sissy_clothe.update(sissy: @sissy)
     end
   end
 end
