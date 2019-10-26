@@ -3,7 +3,7 @@
   = f.input :lastname
   = f.input :surname
   = f.input :job_name,  collection: Job.all.map{ |job| job.name }
-  = f.input :headgear,  collection: @player.clothes.headgear.uniq.map{ |headgear| [headgear.name, headgear.id] }
-  = f.input :outfit,    collection: @player.clothes.outfit.uniq.map{ |outfit| [outfit.name, outfit.id] }
-  = f.input :shoes,     collection: @player.clothes.shoes.uniq.map{ |shoes| [shoes.name, shoes.id] }
+  = f.input :headgear,  collection: @player.sissy_clothes.headgear.uniq.map{ |sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] }
+  = f.input :outfit,    collection: @player.sissy_clothes.outfit.uniq.map{|sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] }
+  = f.input :shoes,     collection: @player.sissy_clothes.shoes.uniq.map{ |sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] }
   = f.button :submit, 'Start', class: 'button-primary-outline button-sm'
