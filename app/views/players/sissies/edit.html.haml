@@ -5,22 +5,12 @@
     .col-lg-6
       .row
         .col-lg-8
-          %h2.title-h2 Inspection
+          %h2.title-h2 Customize
           %p= "#{@sissy.firstname} walks to you and kneels, keeping her eyes low."
           = render 'form'
 
       .row.mt30
         .col-lg-2
-          %p Actions
-        .col-lg-6
-          %ul.custom-list
-            %li= link_to 'Use her mouth', oral_player_sissy_sex_relations_path(@player, @sissy)
-            %li= link_to 'Use her ass',   anal_player_sissy_sex_relations_path(@player, @sissy)
-            - if @sissy.sub_skill >= Sissy::SUB_SKILL_THRESHOLD
-              %li= link_to 'Dominate her',  bdsm_player_sissy_sex_relations_path(@player, @sissy)
-
-      .row.mt30
-        .col-lg-2
           %p Go to
         .col-lg-6
-          = link_to 'Your Factory', player_factories_path(@player)
+          = link_to 'Back', player_sissy_path(@player, @sissy)

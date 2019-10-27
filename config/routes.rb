@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :bondage,                              to: 'players/factories/dungeons#bondage'
     end
 
-    resources :sissies,  only: [:new, :edit, :update],   controller: 'players/sissies' do
+    resources :sissies,  only: [:new, :show, :edit, :update],   controller: 'players/sissies' do
       resource :sex_relations, only: [], controller: 'players/sissies/sex_relations' do
         get 'oral', to: 'players/sissies/sex_relations#oral'
         get 'anal', to: 'players/sissies/sex_relations#anal'

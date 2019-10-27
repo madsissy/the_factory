@@ -1,0 +1,43 @@
+.container.mt30
+  .row
+    .col-lg-8
+      %h2.title-h2 Inspection
+      %p= "#{@sissy.firstname} walks to you and kneels, keeping her eyes low."
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %p= link_to 'Customize your sissy', edit_player_sissy_path(@player, @sissy)
+    .col-lg-4
+      %h2.title-h2 Items
+      .row.text-center
+        .col-lg-4
+          %p Head
+          - if @headgear
+            = image_tag "clothes/#{@headgear.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+          - else
+            = image_tag "clothes/placeholder.png", class: 'item-pics'
+        .col-lg-4
+          %p Body
+          - if @outfit
+            = image_tag "clothes/#{@outfit.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+          - else
+            = image_tag "clothes/placeholder.png", class: 'item-pics'
+        .col-lg-4
+          %p Shoes
+          - if @shoes
+            = image_tag "clothes/#{@shoes.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+          - else
+            = image_tag "clothes/placeholder.png", class: 'item-pics'
+
+      .row.mt30
+        .col-lg-12
+          %h2.title-h2 Actions
+          %ul.custom-list
+            %li= link_to 'Use her mouth', oral_player_sissy_sex_relations_path(@player, @sissy)
+            %li= link_to 'Use her ass',   anal_player_sissy_sex_relations_path(@player, @sissy)
+            - if @sissy.sub_skill >= Sissy::SUB_SKILL_THRESHOLD
+              %li= link_to 'Dominate her',  bdsm_player_sissy_sex_relations_path(@player, @sissy)
+
+  .row.mt30
+    .col-lg-2
+      %p Go to
+    .col-lg-6
+      = link_to 'Your Factory', player_factories_path(@player)

@@ -1,5 +1,5 @@
 class Players::SissiesController < Players::BaseController
-  before_action :set_sissy, only: [:edit, :update]
+  before_action :set_sissy, only: [:show, :edit, :update]
 
   def new
     if params[:new_search]
@@ -12,6 +12,12 @@ class Players::SissiesController < Players::BaseController
     else
       @sissy = @player.sissies.last
     end
+  end
+
+  def show
+    @headgear = @sissy.headgear
+    @outfit   = @sissy.outfit
+    @shoes    = @sissy.shoes
   end
 
   def edit

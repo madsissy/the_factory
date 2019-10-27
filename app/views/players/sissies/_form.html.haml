@@ -12,4 +12,4 @@
   = f.input :shoes,
             collection: @player.sissy_clothes.unweared.shoes.uniq.map{ |sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] },
             value: @sissy.shoes if @sissy.shoes
-  = f.button :submit, 'Start', class: 'button-primary-outline button-sm'
+  = f.button :submit, 'Save', class: 'button-primary-outline button-sm'
