@@ -11,21 +11,21 @@
         .col-lg-4
           %p Head
           - if @headgear
-            = image_tag "clothes/#{@headgear.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+            = image_tag "clothes/#{@headgear.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
           - else
-            = image_tag "clothes/placeholder.png", class: 'item-pics'
+            = image_tag "clothes/placeholder.png", class: 'item-pics item-pics-with-link'
         .col-lg-4
           %p Body
           - if @outfit
-            = image_tag "clothes/#{@outfit.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+            = image_tag "clothes/#{@outfit.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
           - else
-            = image_tag "clothes/placeholder.png", class: 'item-pics'
+            = image_tag "clothes/placeholder.png", class: 'item-pics item-pics-with-link'
         .col-lg-4
           %p Shoes
           - if @shoes
-            = image_tag "clothes/#{@shoes.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics'
+            = image_tag "clothes/#{@shoes.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
           - else
-            = image_tag "clothes/placeholder.png", class: 'item-pics'
+            = image_tag "clothes/placeholder.png", class: 'item-pics item-pics-with-link'
 
       .row.mt30
         .col-lg-12

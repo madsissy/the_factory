@@ -1,4 +1,6 @@
 .places-pics{width: 100%; border-radius: 4px;}
+
 .item-pics{
   width: 100%; border-radius: 4px; box-shadow: 0 0 16px 0 rgba(0,0,0,0.09);
+  &-with-link{ &:hover{ opacity: 0.7;} }
 }
