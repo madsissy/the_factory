@@ -1,15 +1,15 @@
 .container.mt30
   .row
-    .col-lg-6
+    .col-lg-12
       %h2.title-h2 The clothes shop
       %p To Dress your sissies
-      - @clothes.each do |clothe|
+      %ul.custom-list
         .row
-          %ul.custom-list
-            = simple_form_for @sissy_clothe, url: player_black_markets_sissy_clothes_path(@player), method: :post do |f|
-              = f.hidden_field :clothe_id, value: clothe.id
-              .col-lg-6.mb30
-                %li.card
+          - @clothes.each do |clothe|
+            .col-lg-3.mb30
+              %li.card
+                = simple_form_for @sissy_clothe, url: player_black_markets_sissy_clothes_path(@player), method: :post do |f|
+                  = f.hidden_field :clothe_id, value: clothe.id
                   = image_tag "clothes/#{clothe.name.downcase.gsub(' ', '_')}.jpg"
                   .card-content
                     %p= clothe.name
