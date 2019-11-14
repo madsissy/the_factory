@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         get 'anal', to: 'players/sissies/sex_relations#anal'
         get 'bdsm', to: 'players/sissies/sex_relations#bdsm'
       end
+      resources :sissy_clothes, only: [:update], controller: 'players/sissies/sissy_clothes'
       resources :recruitments, only: [:new],  controller: 'players/sissies/recruitments'
     end
 

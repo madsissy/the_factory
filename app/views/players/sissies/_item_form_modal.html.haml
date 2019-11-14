@@ -1,0 +1,13 @@
+#itemModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "itemModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#itemModalLabel.modal-title Items
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        -# = simple_form_for :sissy_clothe, url: player_sissy_sissy_clothes_path(@player, @sissy), method: :post do |f|
+        -#   = f.input attribute, collection:
+      .modal-footer
+        %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-primary{:type => "button"} Save changes
