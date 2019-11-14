@@ -5,11 +5,11 @@
   = f.input :job_name,  collection: Job.all.map{ |job| job.name }
   = f.input :headgear,
             collection: @player.sissy_clothes.unweared.headgear.uniq.map{ |sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] },
-            value: @sissy.headgear if @sissy.headgear
+            value: (@sissy.headgear if @sissy.headgear)
   = f.input :outfit,
             collection: @player.sissy_clothes.unweared.outfit.uniq.map{|sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] },
-            value: @sissy.outfit if @sissy.outfit
+            value: (@sissy.outfit if @sissy.outfit)
   = f.input :shoes,
             collection: @player.sissy_clothes.unweared.shoes.uniq.map{ |sissy_clothe| [sissy_clothe.clothe.name, sissy_clothe.id] },
-            value: @sissy.shoes if @sissy.shoes
+            value: (@sissy.shoes if @sissy.shoes)
   = f.button :submit, 'Save', class: 'button-primary-outline button-sm'

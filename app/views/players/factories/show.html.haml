@@ -1,28 +1,24 @@
 .container.mt30
   .row
-    .col-lg-6
-      = image_tag 'factory.jpg', class: 'places-pics'
-    .col-lg-6
-      .row
-        .col-lg-8
-          %h2.title-h2 Your Factory
-          %p Here you can make lil sissies <3
+    .col-lg-12.mt30
+      %h2.title-h2 Your Factory
+      %p Here you can make lil sissies <3
 
-          %ul.custom-list
-            - @sissies.each do |sissy|
+      %ul.custom-list
+        .row
+          - @sissies.each do |sissy|
+            .col-lg-4
               %li
-                .row
-                  .col-lg-12
-                    .card
-                      .card-content
-                        %h5.title-h5= sissy.full_name
-                        %p= "Will: #{sissy.will}"
-                        - if sissy.current_job
-                          %p
-                            = "Works as #{sissy.current_job.job.name}"
-                        %ul.custom-list
-                          %li= link_to 'Inspect the sissy',player_sissy_path(@player, sissy)
-                          %li= link_to 'Bring to dungeon', player_factories_dungeons_path(@player, sissy_id: sissy.id)
+                .card
+                  .card-content
+                    %h5.title-h5= sissy.full_name
+                    %p= "Will: #{sissy.will}"
+                    - if sissy.current_job
+                      %p
+                        = "Works as #{sissy.current_job.job.name}"
+                    %ul.custom-list
+                      %li= link_to 'Inspect the sissy',player_sissy_path(@player, sissy)
+                      %li= link_to 'Bring to dungeon', player_factories_dungeons_path(@player, sissy_id: sissy.id)
 
       .row
         .col-lg-2
