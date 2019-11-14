@@ -10,4 +10,12 @@ class SissyClothe < ApplicationRecord
   scope :shoes,       -> { joins(:clothe).where(clothes: { kind: 'shoes'} ) }
   scope :unweared,    -> { where(sissy_id: nil) }
 
+  # === Methods ===
+  def self.item_scope attribute
+    case attribute
+    when :headgear  then headgear
+    when :outfit    then outfit
+    when :shoes     then shoes
+    end
+  end
 end

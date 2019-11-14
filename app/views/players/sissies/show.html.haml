@@ -9,15 +9,15 @@
       %h2.title-h2 Items
       .row.text-center
         .col-lg-4
-          %button.btn{"data-target" => "#itemModal", "data-toggle" => "modal", :type => "button"}
+          %button.btn{"data-target" => "#itemModal-headgear", "data-toggle" => "modal", :type => "button"}
             %p Head
             - if @headgear
               = image_tag "clothes/#{@headgear.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
             - else
               = image_tag "clothes/placeholder.png", class: 'item-pics item-pics-with-link'
-          = render 'item_form_modal', attribute: :head, sissy_clothe: @headgear
+          = render 'item_form_modal', attribute: :headgear, sissy_clothe: @headgear
         .col-lg-4
-          %button.btn{"data-target" => "#itemModal", "data-toggle" => "modal", :type => "button"}
+          %button.btn{"data-target" => "#itemModal-outfit", "data-toggle" => "modal", :type => "button"}
             %p Body
             - if @outfit
               = image_tag "clothes/#{@outfit.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
@@ -25,7 +25,7 @@
               = image_tag "clothes/placeholder.png", class: 'item-pics item-pics-with-link'
           = render 'item_form_modal', attribute: :outfit, sissy_clothe: @outfit
         .col-lg-4
-          %button.btn{"data-target" => "#itemModal", "data-toggle" => "modal", :type => "button"}
+          %button.btn{"data-target" => "#itemModal-shoes", "data-toggle" => "modal", :type => "button"}
             %p Shoes
             - if @shoes
               = image_tag "clothes/#{@shoes.clothe.name.downcase.gsub(' ', '_')}.jpg", class: 'item-pics item-pics-with-link'
